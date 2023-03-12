@@ -1,0 +1,19 @@
+<styles type="text/css">
+
+.form_container {
+    display: flex;
+    justify-content: center;
+}
+
+#form_sheet {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+}
+
+#send_snippet {
+    background-color: #6f42c1;
+}
+
+</styles>

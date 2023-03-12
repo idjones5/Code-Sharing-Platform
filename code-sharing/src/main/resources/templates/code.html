@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Code</title>
+
+    <link rel="stylesheet"
+          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+    <pre id="code_snippet"><code><span th:utext="${codeBody}"></span></code></pre>
+    <span id="load_date" th:utext="${date}"></span>
+    <p hidden id="timeP">Time left: <span th:if="${times}"><span id="ti" th:utext="${time}"></span></span></p>
+    <p hidden id="viewsP">Views left: <span id="vi" th:utext="${views}"></span></p>
+
+    <script>
+
+        let viewsSpan = document.getElementById("viewsP");
+        let timeSpan = document.getElementById("timeP");
+
+        let views = document.getElementById("viewsP").querySelector("span");
+        let time = document.getElementById("timeP").querySelector("span");
+
+        if (parseInt(time.innerText) > 0) {
+            timeSpan.removeAttribute("hidden");
+            time.setAttribute("id", "time_restriction");
+        }
+        if (parseInt(views.innerText) > 0) {
+            viewsSpan.removeAttribute("hidden");
+            views.setAttribute("id", "views_restriction");
+        }
+
+        console.log(views);
+        console.log(time.innerText);
+        console.log(viewsP);
+        console.log(timeP);
+    </script>
+</body>
